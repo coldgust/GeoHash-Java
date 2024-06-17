@@ -55,7 +55,7 @@ public class GeoHashGenerator {
             if (value < mid) {
                 sb.append('0');
                 high = mid;
-            } else if (value > mid) {
+            } else {
                 sb.append('1');
                 low = mid;
             }

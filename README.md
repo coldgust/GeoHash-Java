@@ -2,11 +2,11 @@
 
 ## First step：Encode latitude and longitude as binary string
 
-The latitude range is'[-90, 90]', dividing the interval from the middle, coding it '0' if the current latitude is on the left side of the interval, encoding it as' 1 'on the right side of the interval, and continuing to repeat the above operation in the new interval until the accuracy meets the requirements.
+The latitude range is `[-90, 90]`, dividing the interval from the middle, coding it `0` if the current latitude is on the left side of the interval, encoding it as `1` on the right side of the interval, and continuing to repeat the above operation in the new interval until the accuracy meets the requirements.
 
-The longitude range is'[-180, 180]', and similar encoding is performed.
+The longitude range is `[-180, 180]`, and similar encoding is performed.
 
-such as: （-20.12, 100.13), GeoHash length: 12
+such as: `(-20.12, 100.13)`, GeoHash length: `12`
 
 - latitude binary：`011000110110001010001000000101`
 - longitude binary：`110001110011010000011100001101`
@@ -19,7 +19,7 @@ private String toBinCode(double low, double high, double value, int bits) {
         if (value < mid) {
             sb.append('0');
             high = mid;
-        } else if (value > mid) {
+        } else {
             sb.append('1');
             low = mid;
         }
